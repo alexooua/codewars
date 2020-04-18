@@ -20,18 +20,25 @@ class JadenCasingStrings extends React.Component {
                     Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
                     Jaden-Cased: "How Can Mirrors Be Real If Our Eyes Aren't Real"
                 </text>
-                <code>
+                <h3>Answer</h3>
+
                     <pre>
-                    let str = "How can mirrors be real if our eyes aren't real.";
+                    {`let str = "How can mirrors be real if our eyes aren't real.";
 
                     let target = " "; // цель поиска
+
 
                     let e = str.split(target).map(x =>x.replace(x[0],x[0].toUpperCase())).join(' ');
 
 
-                    console.log(e);
+                    console.log(e);`}
                 </pre>
-                </code>
+                <h3>Best answer</h3>
+                <pre>
+                   {`String.prototype.toJadenCase = function () {
+                    return this.replace(/(^|\s)[a-z]/g, function(x){ return x.toUpperCase(); });
+                };`}
+                </pre>
             </div>
         );
     }
@@ -39,11 +46,3 @@ class JadenCasingStrings extends React.Component {
 
 export default JadenCasingStrings;
 
-let str = "How can mirrors be real if our eyes aren't real.";
-
-let target = " "; // цель поиска
-
-let e = str.split(target).map(x => x.replace(x[0], x[0].toUpperCase())).join(' ');
-
-
-console.log(e);
